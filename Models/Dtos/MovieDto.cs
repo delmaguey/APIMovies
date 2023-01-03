@@ -27,7 +27,7 @@ namespace APIMovies.Models.Dtos
         public ClassificationType Classification { get; set; }
 
         public int categoryID { get; set; }
-        //[ForeignKey("Id")]
+
         public Category Category { get; set; }
 
     }

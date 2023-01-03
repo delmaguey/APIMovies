@@ -10,17 +10,14 @@ namespace APIMovies.Models.Dtos
     public class MovieUpdateDto
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "The Id is mandatory")]
-
+        
+        [Required(ErrorMessage = "The Name is mandatory")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "The name is mandatory")]
 
-        public string ImagePath { get; set; }
-        [Required(ErrorMessage = "The ImagePath is mandatory")]
-
-        public string Description { get; set; }
         [Required(ErrorMessage = "The Description is mandatory")]
+        public string Description { get; set; }
 
+        [Required(ErrorMessage = "The Duration is mandatory")]
         public string Duration { get; set; }
 
         public ClassificationType Classification { get; set; }

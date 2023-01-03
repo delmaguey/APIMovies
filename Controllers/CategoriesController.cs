@@ -42,8 +42,8 @@ namespace APIMovies.Controllers
             return Ok(categoryListDto);
         }
 
-        //[HttpGet("{categoryId:int}", Name = "GetCategory")]
-        [HttpGet]
+        [HttpGet("{categoryId:int}", Name = "GetCategory")]
+        //[HttpGet]
         public IActionResult GetCategory(int categoryId)
         {
             var itemtCategory = _ctRepo.GetCategory(categoryId);
@@ -114,7 +114,7 @@ namespace APIMovies.Controllers
 
             if (!_ctRepo.DeleteCategory(category))
             {
-                ModelState.AddModelError("", $"Something went wrong deleting the registry {category.Name}");
+                ModelState.AddModelError("", $"Something went wrong deleting the registry: {category.Name}");
                 return StatusCode(500, ModelState);
             }
 
